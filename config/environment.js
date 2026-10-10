@@ -4,7 +4,7 @@ module.exports = function (environment) {
   const ENV = {
     modulePrefix: 'absensi-cli-baru',
     environment,
-    rootURL: '/',
+    rootURL: '/absensi-mahasiswa-web/',
     locationType: 'history',
     EmberENV: {
       EXTEND_PROTOTYPES: false,
