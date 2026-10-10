@@ -2,10 +2,10 @@
 
 module.exports = function (environment) {
   const ENV = {
-    modulePrefix: 'absensi-cli-baru',
+    modulePrefix: 'sistem-absensi-mahasiswa',
     environment,
-    modulePrefix: 'Sistem Absensi Mahasiswa',
     locationType: 'history',
+    rootURL: '/',
     EmberENV: {
       EXTEND_PROTOTYPES: false,
       FEATURES: {
@@ -41,7 +41,8 @@ module.exports = function (environment) {
   }
 
   if (environment === 'production') {
-    // here you can enable a production-specific feature
+    ENV.locationType = 'hash'; // Menggunakan hash agar aman di GitHub Pages
+    ENV.rootURL = '/absensi-mahasiswa-web/';
   }
 
   return ENV;
