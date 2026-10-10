@@ -4,9 +4,8 @@
       <h2>Tentang Sistem</h2>
 
       <p class="welcome-description">
-        Sistem Absensi Mahasiswa merupakan aplikasi berbasis web
-        yang dirancang untuk membantu pengelolaan data mahasiswa
-        secara terstruktur.
+        Sistem Absensi Mahasiswa merupakan aplikasi berbasis web yang dirancang
+        untuk membantu pengelolaan data mahasiswa secara terstruktur.
       </p>
     </div>
 

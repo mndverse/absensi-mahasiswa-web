@@ -4,30 +4,30 @@ Aplikasi berbasis web untuk membantu proses pencatatan dan pengelolaan data maha
 
 ## Fitur Aplikasi
 
-* **Halaman Home:** Menampilkan halaman utama aplikasi.
-* **Data Mahasiswa:** Menampilkan daftar data mahasiswa.
-* **Tambah Data:** Menambahkan data mahasiswa baru.
-* **Edit Data:** Mengubah informasi mahasiswa.
-* **Hapus Data:** Menghapus data mahasiswa.
-* **Pencarian:** Memudahkan pencarian mahasiswa berdasarkan nama atau NIM.
-* **Penyimpanan Data:** Menyimpan data menggunakan localStorage browser.
+- **Halaman Home:** Menampilkan halaman utama aplikasi.
+- **Data Mahasiswa:** Menampilkan daftar data mahasiswa.
+- **Tambah Data:** Menambahkan data mahasiswa baru.
+- **Edit Data:** Mengubah informasi mahasiswa.
+- **Hapus Data:** Menghapus data mahasiswa.
+- **Pencarian:** Memudahkan pencarian mahasiswa berdasarkan nama atau NIM.
+- **Penyimpanan Data:** Menyimpan data menggunakan localStorage browser.
 
 ## Teknologi yang Digunakan
 
-* Ember.js
-* JavaScript
-* HTML
-* CSS
-* Node.js
-* npm
+- Ember.js
+- JavaScript
+- HTML
+- CSS
+- Node.js
+- npm
 
 ## Persyaratan
 
 Pastikan perangkat telah memiliki:
 
-* Git
-* Node.js dan npm
-* Browser web
+- Git
+- Node.js dan npm
+- Browser web
 
 ## Instalasi
 

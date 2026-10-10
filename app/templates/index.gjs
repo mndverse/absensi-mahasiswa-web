@@ -19,10 +19,9 @@ import { LinkTo } from '@ember/routing';
       <div class="home-divider"></div>
 
       <p class="home-description">
-        Selamat datang di sistem pencatatan kehadiran mahasiswa.
-        Aplikasi ini dirancang untuk membantu proses pencatatan,
-        pengelolaan, dan pemantauan kehadiran mahasiswa secara
-        praktis, efektif, dan terstruktur.
+        Selamat datang di sistem pencatatan kehadiran mahasiswa. Aplikasi ini
+        dirancang untuk membantu proses pencatatan, pengelolaan, dan pemantauan
+        kehadiran mahasiswa secara praktis, efektif, dan terstruktur.
       </p>
 
       <LinkTo @route="mahasiswa" class="primary-button home-button">

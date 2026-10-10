@@ -6,9 +6,8 @@
   font-family: Arial, Helvetica, sans-serif;
   color: #2d3b32;
   background: #f5f7f4;
-
   font-synthesis: none;
-  text-rendering: optimizeLegibility;
+  text-rendering: optimizelegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
@@ -17,20 +16,15 @@
   --hijau-sedang: #426b4d;
   --hijau-muda: #dce9d8;
   --hijau-pucat: #edf3eb;
-
   --teks-utama: #2d3b32;
   --teks-sekunder: #657467;
-
-  --putih: #ffffff;
+  --putih: #fff;
   --latar: #f5f7f4;
   --border: #dfe7dc;
-
   --radius-kecil: 9px;
   --radius-sedang: 14px;
   --radius-besar: 18px;
-
-  --bayangan:
-    0 5px 18px rgb(23 63 43 / 6%);
+  --bayangan: 0 5px 18px rgb(23 63 43 / 6%);
 }
 
 * {
@@ -69,7 +63,6 @@ a {
   background: #dce9d8;
 }
 
-
 /* =========================================
    2. STRUKTUR UTAMA APLIKASI
 ========================================= */
@@ -86,7 +79,6 @@ a {
   flex: 1;
 }
 
-
 /* =========================================
    3. HEADER DAN BRAND
 ========================================= */
@@ -96,14 +88,10 @@ a {
   align-items: center;
   justify-content: space-between;
   gap: 24px;
-
   padding: 22px 7%;
-
   background: var(--hijau-tua);
   border-bottom: 1px solid #315d43;
-
-  box-shadow:
-    0 4px 18px rgb(23 63 43 / 10%);
+  box-shadow: 0 4px 18px rgb(23 63 43 / 10%);
 }
 
 .brand {
@@ -117,13 +105,10 @@ a {
   display: grid;
   place-items: center;
   flex-shrink: 0;
-
   width: 48px;
   height: 48px;
-
   background: var(--hijau-muda);
   border-radius: 15px;
-
   font-size: 25px;
 }
 
@@ -141,7 +126,6 @@ a {
   line-height: 1.5;
 }
 
-
 /* =========================================
    4. NAVIGASI
 ========================================= */
@@ -157,17 +141,12 @@ a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-
   padding: 11px 16px;
-
   border-radius: 10px;
-
   color: #edf4ed;
   text-decoration: none;
-
   font-size: 14px;
   font-weight: 600;
-
   transition:
     background-color 0.2s ease,
     color 0.2s ease,
@@ -184,19 +163,15 @@ a {
   transform: translateY(-2px);
 }
 
-
 /* =========================================
    5. FOOTER
 ========================================= */
 
 .app-footer {
   padding: 22px 20px;
-
   background: var(--hijau-tua);
   border-top: 1px solid #315d43;
-
   color: var(--hijau-muda);
-
   text-align: center;
   font-size: 12px;
   line-height: 1.7;
@@ -206,87 +181,9 @@ a {
   margin: 5px;
 }
 
-
 /* =========================================
    6. HALAMAN BERANDA
 ========================================= */
-
-.home-page {
-  min-height: 65vh;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  padding: 55px 25px;
-
-  background:
-    linear-gradient(
-      135deg,
-      #edf3eb,
-      #ffffff
-    );
-
-  border: 1px solid #dce7d8;
-  border-radius: 24px;
-
-  box-shadow:
-    0 5px 20px rgb(23 63 43 / 3%);
-}
-
-.home-content {
-  width: 100%;
-  max-width: 720px;
-  text-align: center;
-}
-
-.home-label {
-  display: inline-block;
-
-  margin-bottom: 18px;
-  padding: 8px 14px;
-
-  color: #426b4d;
-  background: #dce9d8;
-
-  border-radius: 30px;
-
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 1.5px;
-}
-
-.home-content h1 {
-  margin: 0 0 22px;
-
-  color: var(--hijau-tua);
-
-  font-size: clamp(30px, 5vw, 46px);
-  line-height: 1.25;
-}
-
-.home-description {
-  max-width: 650px;
-  margin: 0 auto;
-
-  color: #596b5d;
-
-  font-size: 16px;
-  line-height: 1.9;
-}
-
-.home-button {
-  margin-top: 28px;
-}
-
-.home-note {
-  margin-top: 28px;
-
-  color: var(--teks-sekunder);
-  font-size: 13px;
-  line-height: 1.7;
-}
-
 
 /* =========================================
    7. TOMBOL UTAMA
@@ -296,20 +193,14 @@ a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-
   padding: 13px 22px;
-
   border: none;
   border-radius: 10px;
-
   background: var(--hijau);
   color: var(--putih);
-
   font-weight: 600;
   text-decoration: none;
-
   cursor: pointer;
-
   transition:
     background-color 0.2s ease,
     transform 0.2s ease,
@@ -318,17 +209,13 @@ a {
 
 .primary-button:hover {
   background: #102f20;
-
-  box-shadow:
-    0 5px 12px rgb(23 63 43 / 15%);
-
+  box-shadow: 0 5px 12px rgb(23 63 43 / 15%);
   transform: translateY(-1px);
 }
 
 .primary-button:active {
   transform: translateY(0);
 }
-
 
 /* =========================================
    8. KARTU INFORMASI BERANDA
@@ -337,20 +224,16 @@ a {
 .info-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-
   gap: 20px;
   margin-top: 26px;
 }
 
 .info-card {
   padding: 26px 22px;
-
   background: var(--putih);
   border: 1px solid var(--border);
   border-radius: var(--radius-besar);
-
   box-shadow: var(--bayangan);
-
   transition:
     transform 0.2s ease,
     box-shadow 0.2s ease;
@@ -358,22 +241,17 @@ a {
 
 .info-card:hover {
   transform: translateY(-4px);
-
-  box-shadow:
-    0 10px 24px rgb(23 63 43 / 10%);
+  box-shadow: 0 10px 24px rgb(23 63 43 / 10%);
 }
 
 .info-icon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-
   width: 48px;
   height: 48px;
-
   background: var(--hijau-pucat);
   border-radius: 12px;
-
   font-size: 28px;
 }
 
@@ -385,13 +263,10 @@ a {
 
 .info-card p {
   margin: 0;
-
   color: var(--teks-sekunder);
-
   font-size: 14px;
   line-height: 1.8;
 }
-
 
 /* =========================================
    9. JUDUL HALAMAN
@@ -404,9 +279,7 @@ a {
 
 .page-heading h2 {
   margin: 0 0 10px;
-
   color: var(--hijau-tua);
-
   font-size: clamp(24px, 3vw, 30px);
   line-height: 1.4;
 }
@@ -414,13 +287,10 @@ a {
 .page-heading p {
   max-width: 680px;
   margin: 0 auto;
-
   color: var(--teks-sekunder);
-
   font-size: 14px;
   line-height: 1.8;
 }
-
 
 /* =========================================
    10. KARTU FORMULIR DAN TABEL
@@ -429,15 +299,11 @@ a {
 .form-card,
 .table-card {
   min-width: 0;
-
   margin-bottom: 28px;
   padding: 26px;
-
   background: var(--putih);
-
   border: 1px solid var(--border);
   border-radius: var(--radius-besar);
-
   box-shadow: var(--bayangan);
 }
 
@@ -445,9 +311,7 @@ a {
 .table-card h2 {
   margin-top: 0;
   margin-bottom: 22px;
-
   color: var(--hijau-tua);
-
   font-size: 20px;
   line-height: 1.5;
 }
@@ -456,33 +320,26 @@ a {
   text-align: center;
 }
 
-
 /* =========================================
    11. FORMULIR ABSENSI
 ========================================= */
 
 .form-card form {
   display: grid;
-
-  grid-template-columns:
-    repeat(2, minmax(0, 1fr));
-
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 0 20px;
 }
 
 .form-group {
   display: flex;
   flex-direction: column;
-
   gap: 8px;
   margin-bottom: 18px;
-
   min-width: 0;
 }
 
 .form-group label {
   color: #344b39;
-
   font-size: 14px;
   font-weight: 600;
   line-height: 1.5;
@@ -492,17 +349,12 @@ a {
 .form-group select {
   width: 100%;
   min-height: 44px;
-
   padding: 12px 14px;
-
   color: var(--teks-utama);
   background: var(--putih);
-
   border: 1px solid #cedbca;
   border-radius: var(--radius-kecil);
-
   outline: none;
-
   transition:
     border-color 0.2s ease,
     box-shadow 0.2s ease,
@@ -516,9 +368,7 @@ a {
 .form-group input:focus,
 .form-group select:focus {
   border-color: var(--hijau-sedang);
-
-  box-shadow:
-    0 0 0 3px rgb(66 107 77 / 12%);
+  box-shadow: 0 0 0 3px rgb(66 107 77 / 12%);
 }
 
 .form-group input:hover,
@@ -527,12 +377,9 @@ a {
 }
 
 .form-card form button {
-  justify-self: start;
-  align-self: start;
-
+  place-self: start start;
   margin-bottom: 8px;
 }
-
 
 /* =========================================
    12. TOMBOL EDIT DAN HAPUS
@@ -543,21 +390,15 @@ a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-
   min-width: 65px;
   min-height: 36px;
-
   margin-right: 6px;
   padding: 8px 12px;
-
   border: none;
   border-radius: 7px;
-
   cursor: pointer;
-
   font-size: 12px;
   font-weight: 600;
-
   transition:
     background-color 0.2s ease,
     transform 0.2s ease,
@@ -593,7 +434,6 @@ a {
   transform: translateY(0);
 }
 
-
 /* =========================================
    13. TABEL DATA MAHASISWA
 ========================================= */
@@ -601,31 +441,24 @@ a {
 .table-wrapper {
   width: 100%;
   overflow-x: auto;
-
   border: 1px solid #e4ebe1;
   border-radius: 10px;
-
   scrollbar-width: thin;
   scrollbar-color: #9aafa0 #edf2ed;
 }
 
 .table-wrapper table {
   width: 100%;
-
   border-collapse: collapse;
-
   white-space: nowrap;
   text-align: center;
 }
 
 .table-wrapper th {
   padding: 15px 14px;
-
   color: var(--putih);
   background: var(--hijau);
-
   text-align: center;
-
   font-size: 13px;
   font-weight: 600;
   line-height: 1.5;
@@ -633,14 +466,10 @@ a {
 
 .table-wrapper td {
   padding: 14px;
-
   border-bottom: 1px solid #e4ebe1;
-
   color: var(--teks-utama);
-
   text-align: center;
   vertical-align: middle;
-
   font-size: 13px;
   line-height: 1.6;
 }
@@ -657,22 +486,17 @@ a {
   border-bottom: none;
 }
 
-
 /* =========================================
    14. LABEL STATUS KEHADIRAN
 ========================================= */
 
 .status-badge {
   display: inline-block;
-
   min-width: 65px;
   padding: 6px 12px;
-
   border-radius: 7px;
-
   font-size: 12px;
   font-weight: 700;
-
   text-align: center;
   line-height: 1.4;
 }
@@ -697,17 +521,13 @@ a {
   background: #fee2e2;
 }
 
-
 /* =========================================
    15. KARTU STATISTIK ABSENSI
 ========================================= */
 
 .statistik-container {
   display: grid;
-
-  grid-template-columns:
-    repeat(4, minmax(0, 1fr));
-
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 18px;
   margin: 24px 0 28px;
 }
@@ -715,22 +535,14 @@ a {
 .statistik-card {
   display: flex;
   align-items: center;
-
   gap: 15px;
   min-width: 0;
-
   padding: 22px 20px;
-
   background: var(--putih);
-
   border: 1px solid #e5ebe6;
   border-top: 4px solid #269b62;
-
   border-radius: var(--radius-sedang);
-
-  box-shadow:
-    0 4px 14px rgb(20 60 40 / 6%);
-
+  box-shadow: 0 4px 14px rgb(20 60 40 / 6%);
   transition:
     transform 0.2s ease,
     box-shadow 0.2s ease;
@@ -738,23 +550,17 @@ a {
 
 .statistik-card:hover {
   transform: translateY(-4px);
-
-  box-shadow:
-    0 8px 20px rgb(20 60 40 / 12%);
+  box-shadow: 0 8px 20px rgb(20 60 40 / 12%);
 }
 
 .statistik-icon {
   display: flex;
   align-items: center;
   justify-content: center;
-
   flex-shrink: 0;
-
   width: 48px;
   height: 48px;
-
   border-radius: 12px;
-
   font-size: 24px;
   font-weight: 700;
 }
@@ -765,18 +571,14 @@ a {
 
 .statistik-info p {
   margin: 0 0 5px;
-
   color: #66736b;
-
   font-size: 14px;
   font-weight: 600;
 }
 
 .statistik-info h3 {
   margin: 0;
-
   color: var(--hijau-tua);
-
   font-size: 28px;
   font-weight: 700;
   line-height: 1.3;
@@ -784,15 +586,11 @@ a {
 
 .statistik-info span {
   display: block;
-
   margin-top: 5px;
-
   color: #89948c;
-
   font-size: 12px;
   line-height: 1.5;
 }
-
 
 /* =========================================
    16. WARNA KARTU STATISTIK
@@ -809,7 +607,6 @@ a {
   background: #e4f6eb;
 }
 
-
 /* IZIN */
 
 .statistik-izin {
@@ -820,7 +617,6 @@ a {
   color: #3479bd;
   background: #e7f1fd;
 }
-
 
 /* SAKIT */
 
@@ -833,7 +629,6 @@ a {
   background: #fff3d8;
 }
 
-
 /* ALPA */
 
 .statistik-alpa {
@@ -845,12 +640,11 @@ a {
   background: #fde9e9;
 }
 
-
 /* =========================================
    17. RESPONSIVE TABLET
 ========================================= */
 
-@media (max-width: 900px) {
+@media (width <= 900px) {
   .app-header {
     gap: 18px;
     padding: 20px 5%;
@@ -866,9 +660,7 @@ a {
   }
 
   .statistik-container {
-    grid-template-columns:
-      repeat(2, minmax(0, 1fr));
-
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 14px;
   }
 
@@ -877,8 +669,7 @@ a {
   }
 
   .info-grid {
-    grid-template-columns:
-      repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .form-card,
@@ -887,16 +678,14 @@ a {
   }
 }
 
-
 /* =========================================
    18. RESPONSIVE HP
 ========================================= */
 
-@media (max-width: 700px) {
+@media (width <= 700px) {
   .app-header {
     align-items: flex-start;
     flex-direction: column;
-
     gap: 18px;
     padding: 20px 5%;
   }
@@ -971,12 +760,11 @@ a {
   }
 }
 
-
 /* =========================================
    19. RESPONSIVE HP KECIL
 ========================================= */
 
-@media (max-width: 480px) {
+@media (width <= 480px) {
   .app-header {
     padding: 18px 5%;
   }
@@ -988,9 +776,7 @@ a {
   .brand-icon {
     width: 42px;
     height: 42px;
-
     border-radius: 12px;
-
     font-size: 22px;
   }
 
@@ -1028,9 +814,7 @@ a {
   }
 
   .statistik-container {
-    grid-template-columns:
-      repeat(2, minmax(0, 1fr));
-
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 10px;
     margin: 18px 0 22px;
   }
@@ -1038,19 +822,15 @@ a {
   .statistik-card {
     flex-direction: column;
     align-items: flex-start;
-
     gap: 10px;
     padding: 15px 12px;
-
     border-radius: 12px;
   }
 
   .statistik-icon {
     width: 38px;
     height: 38px;
-
     border-radius: 10px;
-
     font-size: 20px;
   }
 
@@ -1096,9 +876,7 @@ a {
   .table-card button {
     min-height: 38px;
     min-width: 65px;
-
     padding: 8px 10px;
-
     font-size: 12px;
   }
 
@@ -1141,11 +919,10 @@ a {
   }
 }
 
-
 /* =========================================
    20. AKSESIBILITAS KEYBOARD
 ========================================= */
-
+/* stylelint-disable no-descending-specificity */
 .nav-link:focus-visible,
 button:focus-visible,
 input:focus-visible,
@@ -1155,6 +932,7 @@ a:focus-visible {
   outline-offset: 3px;
 }
 
+/* stylelint-enable no-descending-specificity */
 
 /* =========================================
    21. PENGATURAN ANIMASI
@@ -1170,6 +948,9 @@ a:focus-visible {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* stylelint-disable no-descending-specificity */
+
 /* =========================================
    KOLOM PENCARIAN MAHASISWA
 ========================================= */
@@ -1191,14 +972,11 @@ a:focus-visible {
   width: 100%;
   min-height: 46px;
   padding: 12px 15px;
-
   color: #2d3b32;
-  background: #ffffff;
-
+  background: #fff;
   border: 1px solid #cedbca;
   border-radius: 10px;
   outline: none;
-
   transition:
     border-color 0.2s ease,
     box-shadow 0.2s ease;
@@ -1213,7 +991,7 @@ a:focus-visible {
   box-shadow: 0 0 0 3px rgb(66 107 77 / 12%);
 }
 
-@media (max-width: 480px) {
+@media (width <= 480px) {
   .pencarian-container {
     margin-bottom: 18px;
   }
@@ -1223,6 +1001,7 @@ a:focus-visible {
     font-size: 13px;
   }
 }
+
 /* =========================
    HOME PAGE
 ========================= */
@@ -1236,16 +1015,8 @@ a:focus-visible {
   padding: 60px 30px;
   overflow: hidden;
   background:
-    radial-gradient(
-      circle at 10% 15%,
-      rgba(34, 197, 94, 0.09),
-      transparent 32%
-    ),
-    radial-gradient(
-      circle at 90% 85%,
-      rgba(16, 185, 129, 0.08),
-      transparent 30%
-    );
+    radial-gradient(circle at 10% 15%, rgb(34 197 94 / 9%), transparent 32%),
+    radial-gradient(circle at 90% 85%, rgb(16 185 129 / 8%), transparent 30%);
 }
 
 .home-content {
@@ -1254,7 +1025,7 @@ a:focus-visible {
   width: 100%;
   max-width: 760px;
   text-align: center;
-  animation: homeFadeIn 0.7s ease;
+  animation: home-fade-in 0.7s ease;
 }
 
 .home-decoration {
@@ -1264,15 +1035,15 @@ a:focus-visible {
   width: 76px;
   height: 76px;
   margin: 0 auto 28px;
-  border: 1px solid rgba(34, 197, 94, 0.3);
+  border: 1px solid rgb(34 197 94 / 30%);
   border-radius: 24px;
   background: linear-gradient(145deg, #14532d, #166534);
-  box-shadow: 0 12px 30px rgba(20, 83, 45, 0.2);
+  box-shadow: 0 12px 30px rgb(20 83 45 / 20%);
   transform: rotate(-5deg);
 }
 
 .home-icon {
-  color: #ffffff;
+  color: #fff;
   font-size: 42px;
   font-weight: 800;
   transform: rotate(5deg);
@@ -1326,11 +1097,11 @@ a:focus-visible {
   border: none;
   border-radius: 12px;
   background: linear-gradient(135deg, #166534, #15803d);
-  color: #ffffff;
+  color: #fff;
   font-size: 14px;
   font-weight: 700;
   text-decoration: none;
-  box-shadow: 0 8px 20px rgba(22, 101, 52, 0.2);
+  box-shadow: 0 8px 20px rgb(22 101 52 / 20%);
   transition:
     transform 0.25s ease,
     box-shadow 0.25s ease,
@@ -1339,9 +1110,9 @@ a:focus-visible {
 
 .home-button:hover {
   transform: translateY(-3px);
-  box-shadow: 0 12px 26px rgba(22, 101, 52, 0.28);
+  box-shadow: 0 12px 26px rgb(22 101 52 / 28%);
   background: linear-gradient(135deg, #14532d, #166534);
-  color: #ffffff;
+  color: #fff;
 }
 
 .button-arrow {
@@ -1361,6 +1132,7 @@ a:focus-visible {
   margin-top: 25px;
   color: #94a3b8;
   font-size: 12px;
+  line-height: 1.7;
 }
 
 .note-dot {
@@ -1391,7 +1163,7 @@ a:focus-visible {
   background: #94a3b8;
 }
 
-@keyframes homeFadeIn {
+@keyframes home-fade-in {
   from {
     opacity: 0;
     transform: translateY(15px);
@@ -1403,7 +1175,7 @@ a:focus-visible {
   }
 }
 
-@media (max-width: 600px) {
+@media (width <= 600px) {
   .home-page {
     min-height: 70vh;
     padding: 45px 20px;

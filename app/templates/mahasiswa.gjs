@@ -1,23 +1,18 @@
 import { tracked } from '@glimmer/tracking';
 import { on } from '@ember/modifier';
 import { fn } from '@ember/helper';
+import { eq } from '@ember/helper';
 
-const daftarSemester = [
-  '1', '2', '3', '4', '5', '6', '7', '8',
-];
+const daftarSemester = ['1', '2', '3', '4', '5', '6', '7', '8'];
 
-const daftarStatus = [
-  'Hadir', 'Izin', 'Sakit', 'Alpa',
-];
+const daftarStatus = ['Hadir', 'Izin', 'Sakit', 'Alpa'];
 
 function nomorUrut(index) {
   return index + 1;
 }
 
 function hitungStatus(daftar, status) {
-  return daftar.filter(
-    (item) => item.statusKehadiran === status,
-  ).length;
+  return daftar.filter((item) => item.statusKehadiran === status).length;
 }
 
 function waktuWIB() {
@@ -84,10 +79,7 @@ class DataMahasiswa {
       const nama = (item.nama || '').toLowerCase();
       const nim = (item.nim || '').toLowerCase();
 
-      return (
-        nama.includes(kataKunci) ||
-        nim.includes(kataKunci)
-      );
+      return nama.includes(kataKunci) || nim.includes(kataKunci);
     });
   }
 
@@ -119,10 +111,7 @@ class DataMahasiswa {
   };
 
   simpanPenyimpanan() {
-    localStorage.setItem(
-      'daftarMahasiswa',
-      JSON.stringify(this.daftar),
-    );
+    localStorage.setItem('daftarMahasiswa', JSON.stringify(this.daftar));
   }
 
   ubahInput = (field, event) => {
@@ -140,8 +129,7 @@ class DataMahasiswa {
     const statusKehadiran = this.statusKehadiran;
     const semester = this.semester;
 
-    const formatTanggal =
-      /^(0[1-9]|[12]\d|3[01])\/(0[1-9]|1[0-2])\/\d{4}$/;
+    const formatTanggal = /^(0[1-9]|[12]\d|3[01])\/(0[1-9]|1[0-2])\/\d{4}$/;
 
     if (
       !nama ||
@@ -157,21 +145,13 @@ class DataMahasiswa {
     }
 
     if (!formatTanggal.test(tanggalAbsen)) {
-      alert(
-        'Format tanggal harus DD/MM/YYYY, contohnya 10/10/2026.',
-      );
+      alert('Format tanggal harus DD/MM/YYYY, contohnya 10/10/2026.');
       return;
     }
 
-    const [hari, bulan, tahun] = tanggalAbsen
-      .split('/')
-      .map(Number);
+    const [hari, bulan, tahun] = tanggalAbsen.split('/').map(Number);
 
-    const tanggalValid = new Date(
-      tahun,
-      bulan - 1,
-      hari,
-    );
+    const tanggalValid = new Date(tahun, bulan - 1, hari);
 
     if (
       tanggalValid.getFullYear() !== tahun ||
@@ -205,9 +185,7 @@ class DataMahasiswa {
 
     if (this.sedangEdit !== null) {
       this.daftar = this.daftar.map((item) =>
-        item.id === this.sedangEdit
-          ? { ...item, ...dataBaru }
-          : item,
+        item.id === this.sedangEdit ? { ...item, ...dataBaru } : item,
       );
     } else {
       this.daftar = [
@@ -246,9 +224,7 @@ class DataMahasiswa {
       return;
     }
 
-    this.daftar = this.daftar.filter(
-      (item) => item.id !== id,
-    );
+    this.daftar = this.daftar.filter((item) => item.id !== id);
 
     this.simpanPenyimpanan();
   };
@@ -324,7 +300,11 @@ data.mulaiPembaruanJam();
     {{! Formulir absensi }}
     <div class="form-card">
       <h2>
-        {{if data.sedangEdit "Edit Data Kehadiran" "Formulir Absensi Mahasiswa"}}
+        {{if
+          data.sedangEdit
+          "Edit Data Kehadiran"
+          "Formulir Absensi Mahasiswa"
+        }}
       </h2>
 
       <form {{on "submit" data.tambahData}}>
