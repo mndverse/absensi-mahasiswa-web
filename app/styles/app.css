@@ -1,1 +1,1450 @@
-/* Ember supports plain CSS out of the box. More info: https://cli.emberjs.com/release/advanced-use/stylesheets/ */
+/* =========================================
+   1. PENGATURAN DASAR
+========================================= */
+
+:root {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #2d3b32;
+  background: #f5f7f4;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --hijau-tua: #173f2b;
+  --hijau: #24583b;
+  --hijau-sedang: #426b4d;
+  --hijau-muda: #dce9d8;
+  --hijau-pucat: #edf3eb;
+
+  --teks-utama: #2d3b32;
+  --teks-sekunder: #657467;
+
+  --putih: #ffffff;
+  --latar: #f5f7f4;
+  --border: #dfe7dc;
+
+  --radius-kecil: 9px;
+  --radius-sedang: 14px;
+  --radius-besar: 18px;
+
+  --bayangan:
+    0 5px 18px rgb(23 63 43 / 6%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: var(--latar);
+  color: var(--teks-utama);
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  color: inherit;
+}
+
+::selection {
+  color: var(--hijau-tua);
+  background: #dce9d8;
+}
+
+
+/* =========================================
+   2. STRUKTUR UTAMA APLIKASI
+========================================= */
+
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  width: min(1120px, 90%);
+  margin: 38px auto;
+  flex: 1;
+}
+
+
+/* =========================================
+   3. HEADER DAN BRAND
+========================================= */
+
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+
+  padding: 22px 7%;
+
+  background: var(--hijau-tua);
+  border-bottom: 1px solid #315d43;
+
+  box-shadow:
+    0 4px 18px rgb(23 63 43 / 10%);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.brand-icon {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+
+  width: 48px;
+  height: 48px;
+
+  background: var(--hijau-muda);
+  border-radius: 15px;
+
+  font-size: 25px;
+}
+
+.brand h1 {
+  margin: 0;
+  color: var(--putih);
+  font-size: 21px;
+  line-height: 1.4;
+}
+
+.brand p {
+  margin: 5px 0 0;
+  color: #d0dfd0;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+
+/* =========================================
+   4. NAVIGASI
+========================================= */
+
+.navigation {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.nav-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 11px 16px;
+
+  border-radius: 10px;
+
+  color: #edf4ed;
+  text-decoration: none;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--hijau-tua);
+  background: var(--hijau-muda);
+}
+
+.nav-link:hover {
+  transform: translateY(-2px);
+}
+
+
+/* =========================================
+   5. FOOTER
+========================================= */
+
+.app-footer {
+  padding: 22px 20px;
+
+  background: var(--hijau-tua);
+  border-top: 1px solid #315d43;
+
+  color: var(--hijau-muda);
+
+  text-align: center;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.app-footer p {
+  margin: 5px;
+}
+
+
+/* =========================================
+   6. HALAMAN BERANDA
+========================================= */
+
+.home-page {
+  min-height: 65vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 55px 25px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #edf3eb,
+      #ffffff
+    );
+
+  border: 1px solid #dce7d8;
+  border-radius: 24px;
+
+  box-shadow:
+    0 5px 20px rgb(23 63 43 / 3%);
+}
+
+.home-content {
+  width: 100%;
+  max-width: 720px;
+  text-align: center;
+}
+
+.home-label {
+  display: inline-block;
+
+  margin-bottom: 18px;
+  padding: 8px 14px;
+
+  color: #426b4d;
+  background: #dce9d8;
+
+  border-radius: 30px;
+
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.home-content h1 {
+  margin: 0 0 22px;
+
+  color: var(--hijau-tua);
+
+  font-size: clamp(30px, 5vw, 46px);
+  line-height: 1.25;
+}
+
+.home-description {
+  max-width: 650px;
+  margin: 0 auto;
+
+  color: #596b5d;
+
+  font-size: 16px;
+  line-height: 1.9;
+}
+
+.home-button {
+  margin-top: 28px;
+}
+
+.home-note {
+  margin-top: 28px;
+
+  color: var(--teks-sekunder);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+
+/* =========================================
+   7. TOMBOL UTAMA
+========================================= */
+
+.primary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 13px 22px;
+
+  border: none;
+  border-radius: 10px;
+
+  background: var(--hijau);
+  color: var(--putih);
+
+  font-weight: 600;
+  text-decoration: none;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.primary-button:hover {
+  background: #102f20;
+
+  box-shadow:
+    0 5px 12px rgb(23 63 43 / 15%);
+
+  transform: translateY(-1px);
+}
+
+.primary-button:active {
+  transform: translateY(0);
+}
+
+
+/* =========================================
+   8. KARTU INFORMASI BERANDA
+========================================= */
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 20px;
+  margin-top: 26px;
+}
+
+.info-card {
+  padding: 26px 22px;
+
+  background: var(--putih);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-besar);
+
+  box-shadow: var(--bayangan);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.info-card:hover {
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 10px 24px rgb(23 63 43 / 10%);
+}
+
+.info-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 48px;
+  height: 48px;
+
+  background: var(--hijau-pucat);
+  border-radius: 12px;
+
+  font-size: 28px;
+}
+
+.info-card h3 {
+  margin: 16px 0 8px;
+  color: var(--hijau);
+  font-size: 18px;
+}
+
+.info-card p {
+  margin: 0;
+
+  color: var(--teks-sekunder);
+
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+
+/* =========================================
+   9. JUDUL HALAMAN
+========================================= */
+
+.page-heading {
+  margin-bottom: 28px;
+  text-align: center;
+}
+
+.page-heading h2 {
+  margin: 0 0 10px;
+
+  color: var(--hijau-tua);
+
+  font-size: clamp(24px, 3vw, 30px);
+  line-height: 1.4;
+}
+
+.page-heading p {
+  max-width: 680px;
+  margin: 0 auto;
+
+  color: var(--teks-sekunder);
+
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+
+/* =========================================
+   10. KARTU FORMULIR DAN TABEL
+========================================= */
+
+.form-card,
+.table-card {
+  min-width: 0;
+
+  margin-bottom: 28px;
+  padding: 26px;
+
+  background: var(--putih);
+
+  border: 1px solid var(--border);
+  border-radius: var(--radius-besar);
+
+  box-shadow: var(--bayangan);
+}
+
+.form-card h2,
+.table-card h2 {
+  margin-top: 0;
+  margin-bottom: 22px;
+
+  color: var(--hijau-tua);
+
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+.table-card > h2 {
+  text-align: center;
+}
+
+
+/* =========================================
+   11. FORMULIR ABSENSI
+========================================= */
+
+.form-card form {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 0 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+
+  gap: 8px;
+  margin-bottom: 18px;
+
+  min-width: 0;
+}
+
+.form-group label {
+  color: #344b39;
+
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  min-height: 44px;
+
+  padding: 12px 14px;
+
+  color: var(--teks-utama);
+  background: var(--putih);
+
+  border: 1px solid #cedbca;
+  border-radius: var(--radius-kecil);
+
+  outline: none;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.form-group input::placeholder {
+  color: #98a49a;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: var(--hijau-sedang);
+
+  box-shadow:
+    0 0 0 3px rgb(66 107 77 / 12%);
+}
+
+.form-group input:hover,
+.form-group select:hover {
+  border-color: #9db49f;
+}
+
+.form-card form button {
+  justify-self: start;
+  align-self: start;
+
+  margin-bottom: 8px;
+}
+
+
+/* =========================================
+   12. TOMBOL EDIT DAN HAPUS
+========================================= */
+
+.secondary-button,
+.danger-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 65px;
+  min-height: 36px;
+
+  margin-right: 6px;
+  padding: 8px 12px;
+
+  border: none;
+  border-radius: 7px;
+
+  cursor: pointer;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease,
+    filter 0.2s ease;
+}
+
+.secondary-button {
+  color: var(--putih);
+  background: #54775b;
+}
+
+.secondary-button:hover {
+  background: #36583d;
+}
+
+.danger-button {
+  color: var(--putih);
+  background: #a63f3f;
+}
+
+.danger-button:hover {
+  background: #812c2c;
+}
+
+.form-card button:hover,
+.table-card button:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.05);
+}
+
+.form-card button:active,
+.table-card button:active {
+  transform: translateY(0);
+}
+
+
+/* =========================================
+   13. TABEL DATA MAHASISWA
+========================================= */
+
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+
+  border: 1px solid #e4ebe1;
+  border-radius: 10px;
+
+  scrollbar-width: thin;
+  scrollbar-color: #9aafa0 #edf2ed;
+}
+
+.table-wrapper table {
+  width: 100%;
+
+  border-collapse: collapse;
+
+  white-space: nowrap;
+  text-align: center;
+}
+
+.table-wrapper th {
+  padding: 15px 14px;
+
+  color: var(--putih);
+  background: var(--hijau);
+
+  text-align: center;
+
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.table-wrapper td {
+  padding: 14px;
+
+  border-bottom: 1px solid #e4ebe1;
+
+  color: var(--teks-utama);
+
+  text-align: center;
+  vertical-align: middle;
+
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.table-wrapper tbody tr {
+  transition: background-color 0.2s ease;
+}
+
+.table-wrapper tbody tr:hover {
+  background: #f4f7f2;
+}
+
+.table-wrapper tbody tr:last-child td {
+  border-bottom: none;
+}
+
+
+/* =========================================
+   14. LABEL STATUS KEHADIRAN
+========================================= */
+
+.status-badge {
+  display: inline-block;
+
+  min-width: 65px;
+  padding: 6px 12px;
+
+  border-radius: 7px;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  text-align: center;
+  line-height: 1.4;
+}
+
+.status-hadir {
+  color: #166534;
+  background: #dcfce7;
+}
+
+.status-izin {
+  color: #1d4ed8;
+  background: #dbeafe;
+}
+
+.status-sakit {
+  color: #92400e;
+  background: #fef3c7;
+}
+
+.status-alpa {
+  color: #b91c1c;
+  background: #fee2e2;
+}
+
+
+/* =========================================
+   15. KARTU STATISTIK ABSENSI
+========================================= */
+
+.statistik-container {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 18px;
+  margin: 24px 0 28px;
+}
+
+.statistik-card {
+  display: flex;
+  align-items: center;
+
+  gap: 15px;
+  min-width: 0;
+
+  padding: 22px 20px;
+
+  background: var(--putih);
+
+  border: 1px solid #e5ebe6;
+  border-top: 4px solid #269b62;
+
+  border-radius: var(--radius-sedang);
+
+  box-shadow:
+    0 4px 14px rgb(20 60 40 / 6%);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.statistik-card:hover {
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 8px 20px rgb(20 60 40 / 12%);
+}
+
+.statistik-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  width: 48px;
+  height: 48px;
+
+  border-radius: 12px;
+
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.statistik-info {
+  min-width: 0;
+}
+
+.statistik-info p {
+  margin: 0 0 5px;
+
+  color: #66736b;
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.statistik-info h3 {
+  margin: 0;
+
+  color: var(--hijau-tua);
+
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.statistik-info span {
+  display: block;
+
+  margin-top: 5px;
+
+  color: #89948c;
+
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+
+/* =========================================
+   16. WARNA KARTU STATISTIK
+========================================= */
+
+/* HADIR */
+
+.statistik-hadir {
+  border-top-color: #269b62;
+}
+
+.statistik-hadir .statistik-icon {
+  color: #218653;
+  background: #e4f6eb;
+}
+
+
+/* IZIN */
+
+.statistik-izin {
+  border-top-color: #4389d6;
+}
+
+.statistik-izin .statistik-icon {
+  color: #3479bd;
+  background: #e7f1fd;
+}
+
+
+/* SAKIT */
+
+.statistik-sakit {
+  border-top-color: #e3a52e;
+}
+
+.statistik-sakit .statistik-icon {
+  color: #b77b12;
+  background: #fff3d8;
+}
+
+
+/* ALPA */
+
+.statistik-alpa {
+  border-top-color: #d95757;
+}
+
+.statistik-alpa .statistik-icon {
+  color: #c74343;
+  background: #fde9e9;
+}
+
+
+/* =========================================
+   17. RESPONSIVE TABLET
+========================================= */
+
+@media (max-width: 900px) {
+  .app-header {
+    gap: 18px;
+    padding: 20px 5%;
+  }
+
+  .brand h1 {
+    font-size: 19px;
+  }
+
+  .main-content {
+    width: 90%;
+    margin: 30px auto;
+  }
+
+  .statistik-container {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 14px;
+  }
+
+  .statistik-card {
+    padding: 18px;
+  }
+
+  .info-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .form-card,
+  .table-card {
+    padding: 22px;
+  }
+}
+
+
+/* =========================================
+   18. RESPONSIVE HP
+========================================= */
+
+@media (max-width: 700px) {
+  .app-header {
+    align-items: flex-start;
+    flex-direction: column;
+
+    gap: 18px;
+    padding: 20px 5%;
+  }
+
+  .navigation {
+    width: 100%;
+    gap: 8px;
+  }
+
+  .nav-link {
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+
+  .main-content {
+    width: 92%;
+    margin: 25px auto;
+  }
+
+  .form-card form {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .welcome-card {
+    padding: 36px 20px;
+  }
+
+  .home-page {
+    min-height: auto;
+    padding: 45px 20px;
+  }
+
+  .home-description {
+    font-size: 14px;
+  }
+
+  .form-card,
+  .table-card {
+    padding: 18px;
+    border-radius: 14px;
+  }
+
+  .form-card h2,
+  .table-card h2 {
+    font-size: 19px;
+  }
+
+  .page-heading {
+    margin-bottom: 22px;
+  }
+
+  .page-heading h2 {
+    font-size: 25px;
+  }
+
+  .page-heading p {
+    font-size: 13px;
+  }
+
+  .table-wrapper {
+    max-width: 100%;
+  }
+
+  .table-wrapper th,
+  .table-wrapper td {
+    padding: 12px;
+  }
+}
+
+
+/* =========================================
+   19. RESPONSIVE HP KECIL
+========================================= */
+
+@media (max-width: 480px) {
+  .app-header {
+    padding: 18px 5%;
+  }
+
+  .brand {
+    gap: 10px;
+  }
+
+  .brand-icon {
+    width: 42px;
+    height: 42px;
+
+    border-radius: 12px;
+
+    font-size: 22px;
+  }
+
+  .brand h1 {
+    font-size: 17px;
+  }
+
+  .brand p {
+    font-size: 11px;
+    line-height: 1.5;
+  }
+
+  .navigation {
+    gap: 7px;
+  }
+
+  .nav-link {
+    padding: 9px 10px;
+    border-radius: 8px;
+    font-size: 12px;
+  }
+
+  .main-content {
+    width: 92%;
+    margin: 22px auto;
+  }
+
+  .page-heading h2 {
+    font-size: 22px;
+  }
+
+  .page-heading p {
+    font-size: 13px;
+    line-height: 1.7;
+  }
+
+  .statistik-container {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 10px;
+    margin: 18px 0 22px;
+  }
+
+  .statistik-card {
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 10px;
+    padding: 15px 12px;
+
+    border-radius: 12px;
+  }
+
+  .statistik-icon {
+    width: 38px;
+    height: 38px;
+
+    border-radius: 10px;
+
+    font-size: 20px;
+  }
+
+  .statistik-info p {
+    font-size: 13px;
+  }
+
+  .statistik-info h3 {
+    font-size: 24px;
+  }
+
+  .statistik-info span {
+    font-size: 11px;
+  }
+
+  .form-card,
+  .table-card {
+    padding: 15px;
+    margin-bottom: 20px;
+  }
+
+  .form-card h2,
+  .table-card h2 {
+    font-size: 18px;
+  }
+
+  .form-group {
+    margin-bottom: 16px;
+  }
+
+  .form-group label {
+    font-size: 13px;
+  }
+
+  .form-group input,
+  .form-group select {
+    min-height: 44px;
+    padding: 11px 12px;
+    font-size: 14px;
+  }
+
+  .form-card button,
+  .table-card button {
+    min-height: 38px;
+    min-width: 65px;
+
+    padding: 8px 10px;
+
+    font-size: 12px;
+  }
+
+  .secondary-button,
+  .danger-button {
+    margin-right: 4px;
+  }
+
+  .home-page {
+    padding: 38px 17px;
+    border-radius: 18px;
+  }
+
+  .home-content h1 {
+    font-size: 29px;
+  }
+
+  .home-description {
+    font-size: 13px;
+    line-height: 1.8;
+  }
+
+  .home-label {
+    font-size: 11px;
+    letter-spacing: 1px;
+  }
+
+  .home-note {
+    font-size: 12px;
+  }
+
+  .info-card {
+    padding: 22px 18px;
+  }
+
+  .app-footer {
+    padding: 18px 12px;
+    font-size: 11px;
+    line-height: 1.7;
+  }
+}
+
+
+/* =========================================
+   20. AKSESIBILITAS KEYBOARD
+========================================= */
+
+.nav-link:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+a:focus-visible {
+  outline: 3px solid #8abf98;
+  outline-offset: 3px;
+}
+
+
+/* =========================================
+   21. PENGATURAN ANIMASI
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+/* =========================================
+   KOLOM PENCARIAN MAHASISWA
+========================================= */
+
+.pencarian-container {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  margin-bottom: 22px;
+}
+
+.pencarian-container label {
+  color: #344b39;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.pencarian-container input {
+  width: 100%;
+  min-height: 46px;
+  padding: 12px 15px;
+
+  color: #2d3b32;
+  background: #ffffff;
+
+  border: 1px solid #cedbca;
+  border-radius: 10px;
+  outline: none;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.pencarian-container input::placeholder {
+  color: #98a49a;
+}
+
+.pencarian-container input:focus {
+  border-color: #426b4d;
+  box-shadow: 0 0 0 3px rgb(66 107 77 / 12%);
+}
+
+@media (max-width: 480px) {
+  .pencarian-container {
+    margin-bottom: 18px;
+  }
+
+  .pencarian-container input {
+    min-height: 44px;
+    font-size: 13px;
+  }
+}
+/* =========================
+   HOME PAGE
+========================= */
+
+.home-page {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 75vh;
+  padding: 60px 30px;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at 10% 15%,
+      rgba(34, 197, 94, 0.09),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 90% 85%,
+      rgba(16, 185, 129, 0.08),
+      transparent 30%
+    );
+}
+
+.home-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 760px;
+  text-align: center;
+  animation: homeFadeIn 0.7s ease;
+}
+
+.home-decoration {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 76px;
+  height: 76px;
+  margin: 0 auto 28px;
+  border: 1px solid rgba(34, 197, 94, 0.3);
+  border-radius: 24px;
+  background: linear-gradient(145deg, #14532d, #166534);
+  box-shadow: 0 12px 30px rgba(20, 83, 45, 0.2);
+  transform: rotate(-5deg);
+}
+
+.home-icon {
+  color: #ffffff;
+  font-size: 42px;
+  font-weight: 800;
+  transform: rotate(5deg);
+}
+
+.home-label {
+  margin-bottom: 18px;
+  color: #16a34a;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 3px;
+}
+
+.home-content h1 {
+  margin: 0;
+  color: #163c2b;
+  font-size: clamp(34px, 5vw, 54px);
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -1.5px;
+}
+
+.home-content h1 span {
+  display: block;
+  color: #16a34a;
+}
+
+.home-divider {
+  width: 66px;
+  height: 4px;
+  margin: 25px auto;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #166534, #4ade80);
+}
+
+.home-description {
+  max-width: 610px;
+  margin: 0 auto;
+  color: #64748b;
+  font-size: 16px;
+  line-height: 1.9;
+}
+
+.home-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  margin-top: 32px;
+  padding: 15px 24px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #166534, #15803d);
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 8px 20px rgba(22, 101, 52, 0.2);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+}
+
+.home-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 26px rgba(22, 101, 52, 0.28);
+  background: linear-gradient(135deg, #14532d, #166534);
+  color: #ffffff;
+}
+
+.button-arrow {
+  font-size: 20px;
+  transition: transform 0.25s ease;
+}
+
+.home-button:hover .button-arrow {
+  transform: translateX(4px);
+}
+
+.home-note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  margin-top: 25px;
+  color: #94a3b8;
+  font-size: 12px;
+}
+
+.note-dot {
+  width: 7px;
+  height: 7px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: #22c55e;
+}
+
+.home-side-decoration {
+  position: absolute;
+  right: 28px;
+  bottom: 35px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #94a3b8;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  opacity: 0.7;
+}
+
+.decoration-line {
+  width: 25px;
+  height: 1px;
+  background: #94a3b8;
+}
+
+@keyframes homeFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 600px) {
+  .home-page {
+    min-height: 70vh;
+    padding: 45px 20px;
+  }
+
+  .home-decoration {
+    width: 64px;
+    height: 64px;
+    border-radius: 20px;
+  }
+
+  .home-icon {
+    font-size: 34px;
+  }
+
+  .home-label {
+    font-size: 10px;
+    letter-spacing: 2px;
+  }
+
+  .home-content h1 {
+    letter-spacing: -0.8px;
+  }
+
+  .home-description {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  .home-button {
+    gap: 12px;
+    padding: 14px 18px;
+    font-size: 13px;
+  }
+
+  .home-note {
+    font-size: 11px;
+    line-height: 1.7;
+  }
+
+  .home-side-decoration {
+    display: none;
+  }
+}
