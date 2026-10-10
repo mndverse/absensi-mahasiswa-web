@@ -2,7 +2,7 @@
 
 module.exports = function (environment) {
   const ENV = {
-    modulePrefix: 'sistem-absensi-mahasiswa',
+    modulePrefix: 'absensi-cli-baru',
     environment,
     locationType: 'history',
     rootURL: '/',
