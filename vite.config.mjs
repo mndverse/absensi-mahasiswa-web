@@ -3,7 +3,7 @@ import { extensions, classicEmberSupport, ember } from '@embroider/vite';
 import { babel } from '@rollup/plugin-babel';
 
 export default defineConfig({
-  base: '/sistem-absensi-mahasiswa/',
+  base: '/absensi-mahasiswa-web/',
 
   plugins: [
     classicEmberSupport(),
