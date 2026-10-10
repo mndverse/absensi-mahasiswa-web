@@ -1,54 +1,78 @@
-# absensi-cli-baru
+# Sistem Absensi Mahasiswa
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+Aplikasi berbasis web untuk membantu proses pencatatan dan pengelolaan data mahasiswa dalam sistem absensi mahasiswa. Aplikasi ini dikembangkan menggunakan Ember.js.
 
-## Prerequisites
+## Fitur Aplikasi
 
-You will need the following things properly installed on your computer.
+* **Halaman Home:** Menampilkan halaman utama aplikasi.
+* **Data Mahasiswa:** Menampilkan daftar data mahasiswa.
+* **Tambah Data:** Menambahkan data mahasiswa baru.
+* **Edit Data:** Mengubah informasi mahasiswa.
+* **Hapus Data:** Menghapus data mahasiswa.
+* **Pencarian:** Memudahkan pencarian mahasiswa berdasarkan nama atau NIM.
+* **Penyimpanan Data:** Menyimpan data menggunakan localStorage browser.
 
-- [Git](https://git-scm.com/)
-- [Node.js](https://nodejs.org/) (with npm)
-- [Google Chrome](https://google.com/chrome/)
+## Teknologi yang Digunakan
 
-## Installation
+* Ember.js
+* JavaScript
+* HTML
+* CSS
+* Node.js
+* npm
 
-- `git clone <repository-url>` this repository
-- `cd absensi-cli-baru`
-- `npm install`
+## Persyaratan
 
-## Running / Development
+Pastikan perangkat telah memiliki:
 
-- `npm run start`
-- Visit your app at [http://localhost:4200](http://localhost:4200).
-- Visit your tests at [http://localhost:4200/tests](http://localhost:4200/tests).
+* Git
+* Node.js dan npm
+* Browser web
 
-### Code Generators
+## Instalasi
 
-Make use of the many generators for code, try `npm exec ember help generate` for more details
+Clone repository berikut:
 
-### Running Tests
+```bash
+git clone https://github.com/mndverse/sistem-absensi-mahasiswa.git
+```
 
-- `npm run test`
+Masuk ke direktori proyek:
 
-### Linting
+```bash
+cd sistem-absensi-mahasiswa
+```
 
-- `npm run lint`
-- `npm run lint:fix`
+Instal dependensi:
 
-### Building
+```bash
+npm install
+```
 
-- `npm exec vite build --mode development` (development)
-- `npm run build` (production)
+## Menjalankan Aplikasi
 
-### Deploying
+Jalankan perintah berikut:
 
-Specify what it takes to deploy your app.
+```bash
+npm run start
+```
 
-## Further Reading / Useful Links
+Buka aplikasi melalui browser:
 
-- [ember.js](https://emberjs.com/)
-- [Vite](https://vite.dev)
-- Development Browser Extensions
-  - [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
-  - [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
+http://localhost:4200
+
+## Build Aplikasi
+
+Untuk membuat build produksi, jalankan:
+
+```bash
+npm run build
+```
+
+## Pengembang
+
+Proyek ini dikembangkan sebagai tugas proyek perkuliahan.
+
+## Lisensi
+
+Proyek ini dibuat untuk keperluan pembelajaran dan pengembangan akademik.
